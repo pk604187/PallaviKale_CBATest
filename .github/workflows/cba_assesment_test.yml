@@ -1,4 +1,5 @@
 name: Playwright-test-job
+
 on:
   workflow_dispatch:
     inputs:
