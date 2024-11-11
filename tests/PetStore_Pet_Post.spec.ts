@@ -2,7 +2,7 @@ import {test, expect} from '@playwright/test'
 import * as petData  from './constance/global_constance';
 
 
-test('Add a new pet to the store @Post', async ({ request }) => {
+test('Add a new pet to the store @Post @CreatePet', async ({ request }) => {
     const newPet = await request.post(`v2/pet`, {
       data: {
         "id": Math.floor(100 + Math.random() * 900000), //generate a random number as PetID
@@ -16,7 +16,7 @@ test('Add a new pet to the store @Post', async ({ request }) => {
     console.log("New pet is created with name "+ data.name +" with Id: "+ data.id);
   });
 
-test('Update Pet details in the store @Post', async ({ request }) => {
+test('Update Pet details in the store @Post @UpdatePet', async ({ request }) => {
     console.log(petData.petID)
     const updatePet = await request.post(`v2/pet/${petData.petID}`, {
         data: {
