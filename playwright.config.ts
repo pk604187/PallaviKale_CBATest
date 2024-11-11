@@ -37,18 +37,18 @@ export default defineConfig({
       //'Authorization': `token ${process.env.API_TOKEN}`,
     },
     proxy: {
-      server: ``,
+      server: `http://internet-proxy.dc.vodafone.com.au:8080`,
     },
   },
 
   /* Configure projects for major browsers */
   projects: [
-    /*{
+    {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
 
-    {
+    /*{
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
     },
