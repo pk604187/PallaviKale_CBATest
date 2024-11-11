@@ -5,6 +5,7 @@ test('Get all pets by status @Get @GetPetByStatus' , async({request}) =>{
     //console.log(request)
     const allPetsbyStatus = await request.get(`/v2/pet/findByStatus?status=${petData.PetStatus_Available}`);
     expect(allPetsbyStatus.ok()).toBeTruthy();
+    expect(allPetsbyStatus.status()).toBe(200);
     const data = await allPetsbyStatus.json();
     console.log(data);
     //console.log("Ruby" + Math.floor(100000 + Math.random() * 900000).toString())
@@ -12,10 +13,11 @@ test('Get all pets by status @Get @GetPetByStatus' , async({request}) =>{
 
 test('Get pet by ID @Get @GetPetById' , async({request}) =>{
     //console.log(request)
+    console.log("Getting pet details for PetID: "+petData.petID);
     const allPets = await request.get(`v2/pet/${petData.petID}`);
-    //expect(allPets.ok()).toBeTruthy();
+    expect(allPets.ok()).toBeTruthy();
     expect(allPets.status()).toBe(200);
     const receivedPetdata = await allPets.json();
-    console.log(receivedPetdata.id);
+    console.log("Received PetId: " + receivedPetdata.id);
     expect(receivedPetdata.id.toString()).toEqual(`${petData.petID}`);
 })
