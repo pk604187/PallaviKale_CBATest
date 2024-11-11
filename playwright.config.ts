@@ -37,7 +37,7 @@ export default defineConfig({
       //'Authorization': `token ${process.env.API_TOKEN}`,
     },
     proxy: {
-      server: `http://internet-proxy.dc.vodafone.com.au:8080`,
+      server: ``,
     },
   },
 
