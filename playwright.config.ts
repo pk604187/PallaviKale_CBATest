@@ -35,10 +35,7 @@ export default defineConfig({
       // Add authorization token to all requests.
       // Assuming personal access token available in the environment.
       //'Authorization': `token ${process.env.API_TOKEN}`,
-    },
-    proxy: {
-      server: ``,
-    },
+    }
   },
 
   /* Configure projects for major browsers */
