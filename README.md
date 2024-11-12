@@ -5,8 +5,8 @@ I am working on API testing using Playwright. I am using "Pet" endpoints availab
 In this test suit, below Pet scenarios are covered.
 1. Find pet by status -- Tags --> @Get @GetPetByStatus - completed 
 2. Find pet by ID -- Tags --> @Get @GetPetById - completed 
-3. Create a pet in the store -- Tags @Post @CreatePet - inprogress
-4. update the pet in the store -- Tags @Post @UpdatePet - inprogress
+3. Create a pet in the store -- Tags @Post @CreatePet - completed
+4. update the pet in the store -- Tags @Post @UpdatePet - Some issue with API on portal, inprogress
 
 
 To run the API test using Github Action Workflow, please follow below steps
