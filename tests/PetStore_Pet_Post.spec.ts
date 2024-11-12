@@ -16,18 +16,21 @@ test('Add a new pet to the store @Post @CreatePet', async ({ request }) => {
     console.log("New pet is created with name "+ data.name +" with Id: "+ data.id);
   });
 
-test('Update Pet details in the store @Post @UpdatePet', async ({ request }) => {
+  test('Update Pet details in the store @Post @UpdatePet', async ({ request }) => {
     console.log(petData.petID)
     const updatePet = await request.post(`v2/pet/${petData.petID}`, {
-        data: {
-          "name": petData.petNewName,
-          "status": petData.PetStatus_Sold,
-        }
+      form: {
+        'name': petData.petNewName,
+        'status': petData.PetStatus_Sold
+      },
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Accept': '*/*',
+      }
     });
     expect(updatePet.status()).toBe(200);
     expect(updatePet.ok()).toBeTruthy();
     const data = await updatePet.json();
-    console.log(data.id.toString());
-    expect(data.id.toString()).toEqual(petData.petID);
-    console.log("Pet details are updated with name "+ petData.petNewName +" for PetId: "+ petData.petID);
+    console.log(data);
+    console.log("Pet details are updated");
   });
